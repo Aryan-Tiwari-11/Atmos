@@ -2,6 +2,10 @@
 
 A modern MERN stack application for managing team wellness in real-time. Atmos provides managers with live insights into their team's mood, workload, and engagement through anonymous feedback, kudos recognition, and interactive Q&A sessions.
 
+<img src="https://github.com/Aryan-Tiwari-11/Atmos/blob/main/client/public/team%20dashboard.png" alt="">
+<img src="https://github.com/Aryan-Tiwari-11/Atmos/blob/main/client/public/kudos%20feed.png" alt="">
+<img src="https://github.com/Aryan-Tiwari-11/Atmos/blob/main/client/public/pulse%20check.png" alt="">
+
 ## 📋 Features
 
 ### Core Features
@@ -9,7 +13,7 @@ A modern MERN stack application for managing team wellness in real-time. Atmos p
 - **Live Kudos Feed**: Team members recognize and appreciate each other
 - **Manager Dashboard**: Real-time team wellness analytics with visual charts
 - **Live Q&A Sessions**: Anonymous questions with upvoting during meetings
-- **Role-Based Access**: Employee, Manager, and Admin roles with appropriate permissions
+- **Role-Based Access**: Employee, Manager with appropriate permissions
 - **Real-time Updates**: Socket.io powered live broadcasting of all events
 
 ## 🏗️ Project Structure
@@ -63,8 +67,8 @@ atmos/
    ```
    PORT=5000
    MONGODB_URI=mongodb://localhost:27017/atmos
-   JWT_SECRET=your_secure_secret_key_here
-   NODE_ENV=development
+   JWT_SECRET=your_secure_secret
+   NODE_ENV=develop
    ```
 
 4. **Start MongoDB**
@@ -285,14 +289,5 @@ The app uses JWT (JSON Web Tokens) for authentication:
 - [ ] Feedback comments
 - [ ] Admin user management panel
 
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 👥 Contributors
 
 Atmos Team - Real-time Wellness Monitoring
-
----
-
-Built with ❤️ for happy, healthy teams!
