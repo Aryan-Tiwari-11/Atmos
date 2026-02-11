@@ -15,7 +15,7 @@
     "socket.io-client": "^4.7.2",
     "web-vitals": "^2.1.4"
   },
-  "overrides": {
+  "resolutions": {
     "rimraf": "^4.4.1",
     "rollup-plugin-terser": "npm:@rollup/plugin-terser@^0.4.4",
     "sourcemap-codec": "npm:@jridgewell/sourcemap-codec@^1.4.15",
