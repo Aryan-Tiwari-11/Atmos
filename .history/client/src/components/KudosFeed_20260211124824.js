@@ -25,6 +25,7 @@ const KudosFeed = ({ teamId, userId }) => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadKudos();
 

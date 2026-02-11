@@ -12,6 +12,16 @@ const ManagerDashboard = ({ teamId }) => {
   const [loading, setLoading] = useState(true);
   const [lastUpdate, setLastUpdate] = useState(null);
 
+  useEffect(() => {
+    loadPulseData();
+
+    // Subscribe to real-time pulse updates
+    subscribeToPulseUpdate((data) => {
+      loadPulseData();
+      setLastUpdate(new Date());
+    });
+  }, [teamId, loadPulseData]);
+
   const loadPulseData = async () => {
     try {
       setLoading(true);
@@ -23,16 +33,6 @@ const ManagerDashboard = ({ teamId }) => {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    loadPulseData();
-
-    // Subscribe to real-time pulse updates
-    subscribeToPulseUpdate((data) => {
-      loadPulseData();
-      setLastUpdate(new Date());
-    });
-  }, [teamId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (loading) {
     return <div className="loading">Loading team pulse data...</div>;

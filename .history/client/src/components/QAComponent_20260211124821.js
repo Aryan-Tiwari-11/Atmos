@@ -27,6 +27,7 @@ const QAComponent = ({ teamId, userId, userRole }) => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadQuestions();
 

@@ -44,7 +44,7 @@ const QAComponent = ({ teamId, userId, userRole }) => {
         )
       );
     });
-  }, [sessionId]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [sessionId, loadQuestions]);
 
   const handleSubmitQuestion = async (e) => {
     e.preventDefault();

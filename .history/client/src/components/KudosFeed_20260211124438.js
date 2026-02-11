@@ -13,6 +13,15 @@ const KudosFeed = ({ teamId, userId }) => {
   const [toUserId, setToUserId] = useState('');
   const [isAnonymous, setIsAnonymous] = useState(true);
 
+  useEffect(() => {
+    loadKudos();
+
+    // Subscribe to real-time kudos
+    subscribeToKudos((data) => {
+      setKudos((prev) => [data.kudos, ...prev]);
+    });
+  }, [teamId, loadKudos]);
+
   const loadKudos = async () => {
     try {
       setLoading(true);
@@ -24,15 +33,6 @@ const KudosFeed = ({ teamId, userId }) => {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    loadKudos();
-
-    // Subscribe to real-time kudos
-    subscribeToKudos((data) => {
-      setKudos((prev) => [data.kudos, ...prev]);
-    });
-  }, [teamId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleSubmitKudos = async (e) => {
     e.preventDefault();

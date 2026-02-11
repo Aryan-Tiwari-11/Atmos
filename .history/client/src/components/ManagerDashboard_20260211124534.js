@@ -32,7 +32,7 @@ const ManagerDashboard = ({ teamId }) => {
       loadPulseData();
       setLastUpdate(new Date());
     });
-  }, [teamId]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [teamId, loadPulseData]);
 
   if (loading) {
     return <div className="loading">Loading team pulse data...</div>;

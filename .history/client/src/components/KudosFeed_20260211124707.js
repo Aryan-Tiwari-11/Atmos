@@ -25,6 +25,7 @@ const KudosFeed = ({ teamId, userId }) => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadKudos();
 
@@ -32,7 +33,7 @@ const KudosFeed = ({ teamId, userId }) => {
     subscribeToKudos((data) => {
       setKudos((prev) => [data.kudos, ...prev]);
     });
-  }, [teamId]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [teamId]);
 
   const handleSubmitKudos = async (e) => {
     e.preventDefault();

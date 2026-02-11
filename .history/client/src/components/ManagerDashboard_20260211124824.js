@@ -24,6 +24,7 @@ const ManagerDashboard = ({ teamId }) => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadPulseData();
 

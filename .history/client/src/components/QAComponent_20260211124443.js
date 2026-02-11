@@ -15,18 +15,6 @@ const QAComponent = ({ teamId, userId, userRole }) => {
   const [sessionId] = useState('live-meeting-1');
   const [selectedAnswer, setSelectedAnswer] = useState({});
 
-  const loadQuestions = async () => {
-    try {
-      setLoading(true);
-      const res = await questionAPI.getSessionQuestions(sessionId);
-      setQuestions(res.data);
-    } catch (error) {
-      console.error('Error loading questions:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
     loadQuestions();
 
@@ -44,7 +32,19 @@ const QAComponent = ({ teamId, userId, userRole }) => {
         )
       );
     });
-  }, [sessionId]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [sessionId, loadQuestions]);
+
+  const loadQuestions = async () => {
+    try {
+      setLoading(true);
+      const res = await questionAPI.getSessionQuestions(sessionId);
+      setQuestions(res.data);
+    } catch (error) {
+      console.error('Error loading questions:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleSubmitQuestion = async (e) => {
     e.preventDefault();

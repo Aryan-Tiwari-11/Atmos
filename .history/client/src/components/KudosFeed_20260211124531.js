@@ -32,7 +32,7 @@ const KudosFeed = ({ teamId, userId }) => {
     subscribeToKudos((data) => {
       setKudos((prev) => [data.kudos, ...prev]);
     });
-  }, [teamId]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [teamId, loadKudos]);
 
   const handleSubmitKudos = async (e) => {
     e.preventDefault();
